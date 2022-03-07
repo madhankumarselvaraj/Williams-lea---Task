@@ -1,9 +1,9 @@
 # Williams-lea---Task
 
-Specification
+# Specification
 Build a basic API to list, view, and create products. Must be covered by automated tests.
  
-User stories
+# User stories
 1. As an API user
 When accessing an endpoint using HTTP
 Then I see a list of names of all products in the database returned in json format
