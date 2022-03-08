@@ -41,7 +41,7 @@ public ResponseEntity getSpecificProduct(@PathVariable("id") int id) {
     try {
         return ResponseEntity.status(200).body(prodService.getSpecificProduct(id));
     } catch (Exception e) {
-        return ResponseEntity.ok("No Such Products");
+        return ResponseEntity.ok("No Such Product");
     }
 }
 }
