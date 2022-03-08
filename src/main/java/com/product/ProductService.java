@@ -20,7 +20,7 @@ public class ProductService {
 @Autowired
 ProductRepository productRep;
 
-public List<String> getAllProduct() {
+public List<String> getAllProductNames() {
     List<String> product = new ArrayList<String>();
     productRep.findAll().forEach(prod -> product.add(prod.getProdName()));
     return product;
@@ -31,9 +31,9 @@ public void createProduct(Product product) {
 }
 
 public List<Product> getSpecificProduct(Integer prodId) {
-    List<Product> lst = new ArrayList();
-    lst.add(productRep.findById(prodId).get());
-    return lst;
+    List<Product> getProductList = new ArrayList();
+    getProductList.add(productRep.findById(prodId).get());
+    return getProductList;
 }
 
 }

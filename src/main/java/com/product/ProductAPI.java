@@ -8,6 +8,7 @@ package com.product;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,24 +26,22 @@ public class ProductAPI {
 ProductService prodService;
 
 @RequestMapping(value = "/productlist", method = RequestMethod.GET)
-public List getAllProductList() {
-    return prodService.getAllProduct();
+public ResponseEntity getAllProductList() {
+    return ResponseEntity.status(200).body(prodService.getAllProductNames());
 }
 
 @RequestMapping(value = "/createproduct", method = RequestMethod.POST)
-public String createProduct(@RequestBody Product product) {
+public ResponseEntity createProduct(@RequestBody Product product) {
     prodService.createProduct(product);
-    return product.getProdName();
+    return ResponseEntity.status(200).body(product.getProdName());
 }
 
 @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-public List<Product> getSpecificProduct(@PathVariable("id") int id) {
+public ResponseEntity getSpecificProduct(@PathVariable("id") int id) {
     try {
-        return prodService.getSpecificProduct(id);
+        return ResponseEntity.status(200).body(prodService.getSpecificProduct(id));
     } catch (Exception e) {
-        List<Product> lst = new ArrayList<>();
-        return lst;
+        return ResponseEntity.ok("No Such Products");
     }
 }
-
 }
