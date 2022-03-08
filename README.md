@@ -15,3 +15,9 @@ I want to be able to create a new product in the database
 3. As an API user
 When I access an endpoint using HTTP
 I want to be able to view details of a single product
+
+# Notes
+
+If you want show the database info use this link : http://localhost:8080/h2-console/login.jsp?jsessionid=c5b3885200ad5457aab208f2594c811e
+
+Run the test package to check automated test the API.
