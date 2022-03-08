@@ -5,6 +5,7 @@
  */
 package com.product;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -36,7 +37,12 @@ public String createProduct(@RequestBody Product product) {
 
 @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
 public List<Product> getSpecificProduct(@PathVariable("id") int id) {
-    return prodService.getSpecificProduct(id);
+    try {
+        return prodService.getSpecificProduct(id);
+    } catch (Exception e) {
+        List<Product> lst = new ArrayList<>();
+        return lst;
+    }
 }
 
 }
