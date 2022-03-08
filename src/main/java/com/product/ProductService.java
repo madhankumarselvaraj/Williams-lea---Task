@@ -22,7 +22,7 @@ ProductRepository productRep;
 
 public List<String> getAllProduct() {
     List<String> product = new ArrayList<String>();
-    productRep.findAll().forEach(prod -> product.add(prod.getProdname()));
+    productRep.findAll().forEach(prod -> product.add(prod.getProdName()));
     return product;
 }
 

@@ -40,14 +40,14 @@ private ProductRepository prodrep;
 public void whenFindAll() {
     //given
     Product prdOne = new Product();
-    prdOne.setProdcost((float) 100.34);
-    prdOne.setProdname("Mobile");
+    prdOne.setProdCost((float) 100.34);
+    prdOne.setProdName("Mobile");
     entityManager.persist(prdOne);
     entityManager.flush();
 
     Product prdTwo = new Product();
-    prdTwo.setProdcost((float) 100.34);
-    prdTwo.setProdname("Laptop");
+    prdTwo.setProdCost((float) 100.34);
+    prdTwo.setProdName("Laptop");
     entityManager.persist(prdTwo);
     entityManager.flush();
 
@@ -65,22 +65,22 @@ public void whenFindAll() {
 public void whenFindAllById() {
     //given
     Product prod = new Product();
-    prod.setProdname("Mobiles");
+    prod.setProdName("Mobiles");
     entityManager.persist(prod);
     entityManager.flush();
 
     //when
-    Optional<Product> testProd = prodrep.findById(prod.getProdrecid());
+    Optional<Product> testProd = prodrep.findById(prod.getProdRecid());
 
     //then
-    assertThat(testProd.get().getProdname()).isEqualTo(prod.getProdname());
+    assertThat(testProd.get().getProdName()).isEqualTo(prod.getProdName());
 }
 
 @Test
 public void whenSaveNewProduct() {
     Product savedProduct = prodrep.save(new Product("iPhone 10", (float) 789.32));
 
-    assertThat(savedProduct.getProdrecid()).isGreaterThan(0);
+    assertThat(savedProduct.getProdRecid()).isGreaterThan(0);
 }
 
 }

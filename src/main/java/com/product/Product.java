@@ -22,42 +22,42 @@ public class Product {
 @Id
 @Column
 @GeneratedValue
-private Integer prodrecid;
+private Integer prodRecid;
 @Column
-private String prodname;
+private String prodName;
 @Column
-private float prodcost;
+private float prodCost;
 
-public Integer getProdrecid() {
-    return prodrecid;
+public Integer getProdRecid() {
+    return prodRecid;
 }
 
-public void setProdrecid(Integer prodrecid) {
-    this.prodrecid = prodrecid;
+public void setProdRecid(Integer prodRecid) {
+    this.prodRecid = prodRecid;
 }
 
-public String getProdname() {
-    return prodname;
+public String getProdName() {
+    return prodName;
 }
 
-public void setProdname(String prodname) {
-    this.prodname = prodname;
+public void setProdName(String prodName) {
+    this.prodName = prodName;
 }
 
-public float getProdcost() {
-    return prodcost;
+public float getProdCost() {
+    return prodCost;
 }
 
-public void setProdcost(float prodcost) {
-    this.prodcost = prodcost;
+public void setProdCost(float prodCost) {
+    this.prodCost = prodCost;
 }
 
 public Product() {
 }
 
-public Product(String prodname, float prodcost) {
-    this.prodname = prodname;
-    this.prodcost = prodcost;
+public Product(String prodName, float prodCost) {
+    this.prodName = prodName;
+    this.prodCost = prodCost;
 }
 
 }

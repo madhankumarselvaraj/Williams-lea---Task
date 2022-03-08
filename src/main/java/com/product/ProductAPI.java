@@ -32,7 +32,7 @@ public List getAllProductList() {
 @RequestMapping(value = "/createproduct", method = RequestMethod.POST)
 public String createProduct(@RequestBody Product product) {
     prodService.createProduct(product);
-    return product.getProdname();
+    return product.getProdName();
 }
 
 @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
